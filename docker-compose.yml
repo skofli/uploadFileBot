@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  juzget:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: skofli/uptotg:latest
+    container_name: "uptotg"
+    environment:
+      - APP_ID
+      - APP_HASH
+      - BOT_TOKEN
+      - USER_ID
+    volumes:
+      - .var/input:/data/input
+      - .var/output:/data/output
